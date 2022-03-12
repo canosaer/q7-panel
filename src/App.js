@@ -1,7 +1,8 @@
 import './styles/main.scss'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import Gallery from './components/Gallery'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
 
 import React from 'react';
 
@@ -12,7 +13,8 @@ function App() {
     <main className="home">
       <Header />
       <Hero />
-      <Gallery />
+      <Projects />
+      <Footer />
     </main>
   )
 }
