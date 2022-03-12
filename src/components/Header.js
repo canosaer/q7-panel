@@ -12,7 +12,7 @@ export default function Header() {
         <header className="header">
             <button className="toggle" onClick={() => setMenuOpen(!menuOpen)}><FontAwesomeIcon className="toggle__bars" icon="bars" /></button>
 
-            <h1 className="header__heading">Q5 Panel</h1>
+            <h1 className="header__heading">Q7 Panel</h1>
 
             <aside className={sidebarStyles}>
                 <ul className="sidebar__list">

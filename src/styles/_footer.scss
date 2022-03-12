@@ -1,0 +1,14 @@
+@use 'variables';
+@use 'mixins';
+
+.footer{
+	margin-top: 3.5rem;
+	border-top: 1px solid lightgray;
+	padding: 4% 7.1%;
+	font-size: 0.875rem;
+
+	&__text{
+		color: #909097;
+		text-align: center;
+	}
+}

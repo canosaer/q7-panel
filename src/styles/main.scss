@@ -1,6 +1,6 @@
 /* 
 ==============================================
-CONTENT:	Enemy Space v2
+CONTENT:	Q7 Panel
 AUTHOR:		Eric Canosa
 ==============================================
 
@@ -21,7 +21,10 @@ TABLE OF CONTENTS:
 @use 'mixins';
 
 /* 1. Partials =============================== */
-
+@use 'header';
+@use 'hero';
+@use 'projects';
+@use 'footer';
 
 /* 2. Fonts ================================== */
 
@@ -39,6 +42,10 @@ a{
 body{
 	background: whitesmoke;
 	font-family:'Lucida Sans', sans-serif;
+}
+
+#root{
+	@include mixins.default-grid;
 }
 
 /* 4. Utility ================================ */
