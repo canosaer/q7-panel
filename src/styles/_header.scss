@@ -5,6 +5,9 @@
 	@include mixins.default-grid;
     position: relative;
 	padding: 2.35rem 7.1% 1.25rem;
+	max-width: 90rem;
+	width: 100%;
+	place-self: center center;
 
     @include mixins.medium-screen{
 		grid-template-columns: minmax(0,0.35fr) minmax(0,1fr);
