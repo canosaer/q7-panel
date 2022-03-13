@@ -3,8 +3,7 @@
 
 .header{
 	@include mixins.default-grid;
-    grid-template-columns: minmax(0,1fr) minmax(0,0.1fr);
-	position: relative;
+    position: relative;
 	padding: 2.35rem 7.1% 1.25rem;
 
     @include mixins.medium-screen{
@@ -19,18 +18,24 @@
 		font-size: 2rem;
 		font-weight: bold;
 		color: var(--dark-blue);
+		grid-row: 1/2;
+		justify-self: left;
 	}
 }
 
 .toggle{
-	display: flex;
-	flex-direction: column;
-	width: 2rem;
-	height: 2rem;
+	color: var(--dark-blue);
+	font-size: 2.25rem;
+	height: 2.25rem;
+	width: 2.25rem;
+	justify-self: right;
+	z-index: 3;
+	border-radius: 0.2rem;
+	padding: 0;
+	background: none;
+	border: none;
 	cursor: pointer;
-	position: relative;
-	z-index: 4;
-    place-self: center right;
+	grid-row: 1/2;
 
 	@include mixins.medium-screen{
 		display: none;
@@ -51,21 +56,17 @@
 }
 
 .menu{
-	position: absolute;
-	visibility: hidden;
-	width: 0rem;
-	opacity: 0;
-	right: 0;
+	position: fixed;
+	width: 300px;
+	height: 100%;
+	right: -100%;
+	transition: .3s all ease-in;
 	top: 0;
-	height: 100vh;
+	z-index: 2;
+	background: whitesmoke;
 	@include mixins.default-grid;
-	padding: 4rem 0 0 3.7rem;
-	transition: width 200ms ease-in-out;
-	z-index: 3;
-	overflow-x: hidden;
 
 	@include mixins.medium-screen{
-		@include mixins.default-grid;
 		position: unset;
 		width: unset;
 		opacity: unset;
@@ -78,8 +79,16 @@
 	}
 
 	&__list{
+		margin-top: 8.9rem;
+		@include mixins.default-grid;
+		grid-auto-rows: 3.25rem;
+		justify-content: right;
+		font-size: 1.5rem;
+
 		@include mixins.medium-screen{
 			display: flex;
+			margin-top: unset;
+			font-size: unset;
 			align-items: center;
             justify-content: space-between;
             overflow: hidden;
@@ -102,17 +111,22 @@
 
 	&_open{
 		background: white;
-		width: 20.6rem;
+		width: 23rem;
 		opacity: 1;
 		visibility: unset;
+		right: 0;
 	}
 
 	&__item{
+		display: flex;
+		justify-content: right;
+		padding-right: 3rem;
 
-		&_open{
-			margin-top: 3rem;
-			text-align: left;
+		@include mixins.medium-screen{
+			display: unset;
+			justify-content: unset;
+			padding-right: unset;
 		}
-
+		
 	}
 }

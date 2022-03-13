@@ -5,25 +5,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Header() {
     const [menuOpen, setMenuOpen ] = useState(false);
 
-    const sidebarStyles = menuOpen ? 'sidebar sidebar--open' : 'sidebar'
-    const overlayStyles = menuOpen ? 'overlay overlay--open' : 'overlay'
+    const sidebarStyles = menuOpen ? 'menu menu_open' : 'menu'
+    const dimmerStyles = menuOpen ? 'dimmer dimmer_open' : 'dimmer'
 
     return(
         <header className="header">
-            <button className="toggle" onClick={() => setMenuOpen(!menuOpen)}><FontAwesomeIcon className="toggle__bars" icon="bars" /></button>
 
             <h1 className="header__heading">Q7 Panel</h1>
+            <div className={dimmerStyles}></div>
+            <button className="toggle" onClick={() => setMenuOpen(!menuOpen)}><FontAwesomeIcon className="toggle__bars" icon="bars" /></button>
 
             <aside className={sidebarStyles}>
-                <ul className="sidebar__list">
-                    <li className="sidebar__item"><a href="#" className="sidebar__link">Movie Database</a></li>
-                    <li className="sidebar__item"><a href="#" className="sidebar__link">Game Store</a></li>
-                    <li className="sidebar__item"><a href="#" className="sidebar__link">Enemy Space</a></li>
-                    <li className="sidebar__item"><a href="#" className="sidebar__link">Landscape Letters</a></li>
+                <ul className="menu__list">
+                    <li className="menu__item"><a href="#" className="menu__link">Movie Database</a></li>
+                    <li className="menu__item"><a href="#" className="menu__link">Game Store</a></li>
+                    <li className="menu__item"><a href="#" className="menu__link">Enemy Space</a></li>
+                    <li className="menu__item"><a href="#" className="menu__link">Landscape Letters</a></li>
                 </ul>
             </aside>
-
-            <div className={overlayStyles} onClick={() => setMenuOpen(!menuOpen)}></div>
         </header>
     )
 }
