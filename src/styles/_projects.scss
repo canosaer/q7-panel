@@ -41,7 +41,7 @@
 		@include mixins.default-grid;
 		padding: 2rem 3%;
 		grid-column-gap: 3%;
-		grid-row-gap: 6.95rem;
+		grid-row-gap: 7rem;
 		justify-content: center;
 		grid-template-columns: repeat(auto-fit, minmax(21.35rem, 0.4fr));
 
@@ -116,5 +116,6 @@
 		font-size: 1.1rem;
 		padding: 0 1.5rem;
 		line-height: 1.5;
+		text-align: center;
 	}
 }
