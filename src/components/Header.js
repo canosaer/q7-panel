@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import projectData from '../store/projectData'
 
 
 export default function Header() {
@@ -17,10 +18,14 @@ export default function Header() {
 
             <aside className={sidebarStyles}>
                 <ul className="menu__list">
-                    <li className="menu__item"><a href="#" className="menu__link">Movie Database</a></li>
-                    <li className="menu__item"><a href="#" className="menu__link">Game Store</a></li>
-                    <li className="menu__item"><a href="#" className="menu__link">Enemy Space</a></li>
-                    <li className="menu__item"><a href="#" className="menu__link">Landscape Letters</a></li>
+                    {projectData.map((project, i) => {
+                        console.log('hi')
+                        const key = `item--${i}`
+
+                        return(
+                            <li key={key} className="menu__item"><a href={project.url} target="_blank" className="menu__link">{project.name}</a></li>
+                        )
+                    })}
                 </ul>
             </aside>
         </header>
